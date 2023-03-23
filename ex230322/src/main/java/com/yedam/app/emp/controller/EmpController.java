@@ -15,6 +15,7 @@ public class EmpController {
 	@Autowired
 	EmpService EmpService;
 	
+//	getEmpInfo?employee_id=xxxxx
 	@RequestMapping("/getEmpInfo")
 	@ResponseBody
 	public EmpVO getEmpInfo(EmpVO empVO) {
