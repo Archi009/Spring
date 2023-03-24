@@ -1,4 +1,4 @@
-package com.yedam.spring.emp.service;
+package com.yedam.spring.emp.service.Impl;
 
 import java.util.HashMap;
 import java.util.List;
@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.yedam.spring.emp.mapper.EmpMapper;
+import com.yedam.spring.emp.service.EmpService;
+import com.yedam.spring.emp.service.EmpVO;
 
 @Service
 public class EmpServiceImpl implements EmpService {
@@ -32,9 +34,9 @@ public class EmpServiceImpl implements EmpService {
 	}
 
 	@Override
-	public int insetEmp(EmpVO empVO) {
+	public int insertEmp(EmpVO empVO) {
 		int result = empMapper.insertEmpInfo(empVO);
-		if(result == 0) {
+		if(result == 1) {
 			return empVO.getEmployeeId();
 		}else { 
 			return -1;

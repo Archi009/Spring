@@ -11,7 +11,7 @@ public interface EmpService {
 	public EmpVO getEmp(EmpVO empVO);
 	
 	//등록
-	public int insetEmp(EmpVO empVO);
+	public int insertEmp(EmpVO empVO);
 	
 	//수정
 	//급여 갱신

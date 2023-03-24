@@ -10,7 +10,7 @@ public class EmpVO {
 	private String firstName;
 	private String lastName;
 	private String email;
-	private String phonNumber;
+	private String phoneNumber;
 	private String jobId;
 	private Date hireDate;
 	private double salary;
