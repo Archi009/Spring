@@ -5,17 +5,17 @@ import java.util.List;
 public interface BoardService {
 	
 //	전체조회
-	public List<BoardVO> selectBoardList();
+	public List<BoardVO> getBoardList();
 //	상세
-	public BoardVO selectBoardInfo(BoardVO boardVO);
+	public BoardVO getBoardInfo(BoardVO boardVO);
 //	등록하고자 하는 글 번호
-	public BoardVO getBoardNo();
+	public BoardVO getBoardNumber();
 //	글작성
-	public int insertBoard(BoardVO boardVO);
+	public int insertBoardInfo(BoardVO boardVO);
 //	수정
-	public int updateBoard(BoardVO boardVO);
+	public int updateBoardInfo(BoardVO boardVO);
 //	삭제
-	public int deleteBoard(int boardNo);
+	public int deleteBoardInfo(int boardNo);
 	
 	
 }
