@@ -72,7 +72,7 @@ typeAlias를 정의 해 놨기 때문에 간단하게 클래스 명만 적어도
 			UPDATE employees
 				<set>
 		  			<if test="firstName != null and !firstName.equals('')">
-		  				first_name = {#firstName},
+		  				first_name = #{firstName},
 		  			</if>
 		  			<if test="email !=null and !email.equals('')">
 		  				email = #{email},

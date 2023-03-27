@@ -11,7 +11,7 @@
 <body>
 <!-- 비동기 통신에서는 form태그를 사용하기 좀 그렇지만 javascript에서 데이터를 주고 받기에 가장 쉬워서 사용해 본다. -->
 <!-- 페이지의 이동을 막기 위해 onSubmit을 사용한다. -->
-	<form action="empUpdate" method="post" onSubmit="return false" >
+	<form onsubmit="return false" >
 		<div>
 			<label>
 				id: <input type="text" name="employeeId" value="${empInfo.employeeId }" readonly>
@@ -72,27 +72,43 @@
 	</form>
 </body>
 <script>
-	fetch('empUpdate',{
-		method : 'post',
-		headers : {
-			'Context-Type': 'application/json'			
-		},
-		body : convertData();
-	})
-	.then(response => response.json())
-	.then(date => console.log(data))
-	.catch(reject => console.log(reject));
-	
-	
-	
-	function convertData(){
-		let selectForm = document.querySelector('form');
-		
-		let formData = new FormData(selectForm);
-		
+
+	function updateEmpInfo(){
+	//함수로 만들어서 fetch를 필요할 때 발동하도록 한다.
+		fetch('empUpdate',{
+			method : 'post',
+			headers : {
+				'Content-Type': 'application/json'			
+			},
+			body : JSON.stringify(serializeObject())
+		})
+		.then(response => response.json())
+		.then(data => {
+			if(data != null && data['결과'] == 'Success'){
+				alert('사원번호 : ' +data['사원번호'] +'의 정보가 수정되었습니다.');
+			}else{
+				alert('해단사원의 정보가 정상적으로 수정되지 않았습니다.')
+			}
+		})
+		.catch(reject => console.log(reject));
 		
 	}
 	
+	function serializeObject(){
+		// 이 함수를 이용해서 데이터를 객체화 한다.
+		let formData = $('form').serializeArray();
+// 		[{name:'firstName',value:'Steven'},{name:'',value:''},...]
+
+		let objectData={}
+		formData.forEach(function (obj,idx){
+			objectData[obj.name]= obj.value
+		});
+		
+		return objectData;
+	}
+	
+	document.querySelector('button[type="submit"]')
+			.addEventListener('click',updateEmpInfo);
 	
 	
 </script>
