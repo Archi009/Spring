@@ -16,6 +16,5 @@ public interface BoardService {
 	public int updateBoardInfo(BoardVO boardVO);
 //	삭제 - 삭제된 글 번호 반환
 	public int deleteBoardInfo(int boardNo);
-	
-	
+		
 }
