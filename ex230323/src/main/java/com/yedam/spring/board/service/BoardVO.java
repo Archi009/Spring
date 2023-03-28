@@ -13,7 +13,7 @@ public class BoardVO {
 	private String contents;
 	private String writer;
 	@DateTimeFormat(pattern="yyyy-MM-dd")
-	private Date regdtea;
+	private Date regdate;
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date updatedate;
 	private String image;

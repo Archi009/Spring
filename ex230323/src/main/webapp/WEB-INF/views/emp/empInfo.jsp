@@ -67,10 +67,9 @@
 				department_id: <input type="text" name="departmentId" value="${empInfo.departmentId }" readonly>
 			</label>
 		</div>
-		<button type="submit">수정</button>
+		<button type="submit" >수정</button>
 		<button type="button">취소</button>
 	</form>
-</body>
 <script>
 
 	function updateEmpInfo(){
@@ -112,4 +111,5 @@
 	
 	
 </script>
+</body>
 </html>

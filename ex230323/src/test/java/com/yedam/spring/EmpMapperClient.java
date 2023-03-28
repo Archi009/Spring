@@ -16,7 +16,7 @@ import com.yedam.spring.emp.mapper.EmpMapper;
 import com.yedam.spring.emp.service.EmpVO;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "file:src/main//webapp/WEB-INF/spring/**/*-context.xml")
+@ContextConfiguration(locations = "file:src/main/webapp/WEB-INF/spring/**/*-context.xml")
 public class EmpMapperClient {
 	@Autowired
 	EmpMapper empMapper;

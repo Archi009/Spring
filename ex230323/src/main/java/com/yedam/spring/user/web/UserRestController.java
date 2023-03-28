@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.yedam.spring.emp.service.UserListVO;
 import com.yedam.spring.user.UserVO;
@@ -106,10 +108,12 @@ public class UserRestController {
 	
 //	문제있음
 	@PostMapping("/upload")
-	public String uploadFil(UserVO userVO) {
-		System.out.println("name : " + userVO.getName());
-		System.out.println("file : "+ userVO.getPic().getOriginalFilename());
-		return "업로드를 완료했습니다.";
+	public String uploadFil(@RequestPart MultipartFile[] pic) {
+//		System.out.println(userVO);
+//		System.out.println("name : " + userVO.getName());
+//		System.out.println("file : "+ userVO.getPic().getOriginalFilename());
+		System.out.println(pic[0].getOriginalFilename());
+		return "Upload Complete";
 	}
 	
 	

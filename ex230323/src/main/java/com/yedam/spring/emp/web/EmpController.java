@@ -36,7 +36,7 @@ public class EmpController {
 	
 //	단건조회
 	@GetMapping("/empInfo")
-	public String getEMppInfo(EmpVO empVO, Model model) {
+	public String getEmpInfo(EmpVO empVO, Model model) {
 		model.addAttribute("empInfo", empService.getEmp(empVO));
 		return "emp/empInfo";
 	}
