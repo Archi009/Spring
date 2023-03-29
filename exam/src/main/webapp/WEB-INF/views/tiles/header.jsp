@@ -33,7 +33,7 @@
 					<i class="fas fa-tachometer-alt"></i>
 				</div> 대여현황 조회
 			</a> <a class="nav-link"
-				href="${pageContext.request.contextPath}/rentList">
+				href="${pageContext.request.contextPath}/">
 				<div class="sb-nav-link-icon">
 					<i class="fas fa-tachometer-alt"></i>
 				</div> 홈으로

@@ -13,5 +13,10 @@ public class RentVO {
 	private int rentPrice;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date   rentDate;
+	
+//	join 후에 필요한 컬럼명
+	private String bookName;
 	private int rentStatus;
+	private int sumPrice;
+	private int rentCount;
 }

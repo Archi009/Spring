@@ -3,17 +3,21 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+	label {
+	 text-align : left;
+	}
+
+</style>
 <meta charset="UTF-8">
 <title>empInsert.jsp</title>
 </head>
 <body>
 	<h4>도서 등록</h4>
 
-	<form action="bookInsert" method="post">
-
-
+	<form name="insertForm" action="insertBook" method="post" onsubmit="return false">
 		<div>
-			<label id="bookNo">도서번호</label><input type="text" name="bookNo" readonly>
+			<label id="bookNo">도서번호</label><input type="text" name="bookNo" value="${book.bookNo }" readonly>
 		</div>
 		<div>
 			<label id="bookName">도서명</label><input type="text" name="bookName">
@@ -40,16 +44,15 @@
 	</form>
 	<script>
 function formOptionChk(){
-	let bookName= document.getElementsByname('bookName')[0];
-	
+	let bookName = document.getElementsByName('bookName')[0];
 	
 	if(bookName.value == ""){
 		alert('도서명이 입력되지 않았습니다.')
-		title.focus();
+		bookName.focus();
 		return
 	}
 	
-	
+	alert('도서등록이 완료되었습니다.')
 	insertForm.submit();
 }
 

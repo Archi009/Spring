@@ -27,8 +27,9 @@ public class BookController {
 		model.addAttribute("book",service.getBookNo());
 		return "books/bookInsert";
 	}
+	
 	@PostMapping("insertBook")
-	public String insertBookPorcess(BookVO bookVO,RedirectAttributes rrtt) {
+	public String insertBookPorcess(BookVO bookVO, RedirectAttributes rrtt) {
 		service.insertBook(bookVO);
 		return "redirect:getListBook";
 	}
